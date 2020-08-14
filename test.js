@@ -13,11 +13,15 @@ https.get(url,(res) => {
         
             let jsondata = JSON.stringify(body);
             const htmlString = jsondata
-//const result = htmlString.match(/<section class="homepage-module latest" data-module_name="Latest Stories">/g);
-           // var answer =body.match(/<section.*class="homepage-module latest. +.*[\n]+.*/igm)
+
            var answer =body.match(/<section.*class="homepage-module latest" data-module_name="Latest Stories".*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]+.*[\n]/igm);
-          var res = answer.toString();
-           finalanswer = res.match(/<h2.*class="title.*[\n]/igm)
+          var resfinal = answer.toString();
+           fanswer = resfinal.match(/<h2.*class="title.*[\n]/igm)
+           temp=fanswer.toString();
+           temp2 =temp.match(/(<a+).*[^</a>]+>[^</h2>]/igm)
+           temp3=temp2.toString();
+           var finalstr = temp3.replace(/(<\/a+.........)./igm," ");
+           finalanswer = finalstr;
            console.log(finalanswer);
     });
 

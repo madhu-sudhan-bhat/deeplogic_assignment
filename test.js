@@ -20,7 +20,7 @@ https.get(url,(res) => {
            temp=fanswer.toString();
            temp2 =temp.match(/(<a+).*[^</a>]+>[^</h2>]/igm)
            temp3=temp2.toString();
-           var finalstr = temp3.replace(/(<\/a+.........)./igm," ");
+           var finalstr = temp3.replace(/(<\/a).*/igm," ");
            finalanswer = finalstr;
            console.log(finalanswer);
     });
